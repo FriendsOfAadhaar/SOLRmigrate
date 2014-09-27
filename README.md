@@ -8,7 +8,7 @@ Java tool to create SOLR index of structured data from (multiple) csv files
 
 Features:
 
-1. Version of SOLR to be used: 4.9
+1. Version of SOLR to be used: 4.10
 2. Tool should be multi-threaded AND linearly scalable indexing through addition of instances
 3. Eliminate non alpha numeric characters before indexing the record
 4. Use soundex (or variant) representation to index alphabetical fields
