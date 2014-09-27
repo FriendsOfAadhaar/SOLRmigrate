@@ -26,7 +26,12 @@ id1,id2,id3,name,gender,dob,address,vtc,subdistrict,district,state,pincode,mobil
 id1: 36 digit UUID
 id2: 28 digit numeric id
 id3: 12 digit numeric id
-name: string, eliminate nonalphanumber, token, index both (tokens and soundex(token)) 
+name: string
+             - eliminate nonalphanumeric, 
+             - tokenize
+             - check not_tokenize_list
+             - check mark_list
+             - index both (tokens and soundex(token)
 dob: date
 address: string
              - eliminate nonalphanumeric, 
