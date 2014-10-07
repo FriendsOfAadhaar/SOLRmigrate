@@ -22,34 +22,41 @@ Features:
 
 CSV file format:
 
-id1,id2,id3,name,gender,dob,address,vtc,subdistrict,district,state,pincode,mobile,email
+id1,id2,id3,res_name,res_dob_ddmmyyyy,res_gender,res_mobile_num,res_email_id,res_lang_code,biometric_flag,info_shre_cnsnt,issue_date,res_addr_careof,res_addr_building,res_addr_street,res_addr_landmark,res_addr_locality,res_addr_vtc_name,res_addr_district_name,res_addr_subdistrict_name,res_addr_state_name,res_addr_po_name,res_addr_pincode
+
 
 id1: 36 digit UUID
 id2: 28 digit numeric id
 id3: 12 digit numeric id
-name: string
+res_name: string
              - eliminate nonalphanumeric, 
              - tokenize
              - check not_tokenize_list
              - check mark_list
              - index both (tokens and soundex(token)
-dob: date
-address: string
+res_dob_ddmmyy: date
+res_gender: [M|F]
+res_mobile_num: 10 digit number (check structure)
+res_email_id: string (check structure)
+res_lang_code: int
+biometric_flag: int
+info_shre_cnsnt: int
+issue_date: datetime
+
+res_addr_careof, res_addr_building, res_addr_street, res_addr_landmark, res_addr_localty: string
              - eliminate nonalphanumeric, 
              - tokenize
              - check not_tokenize_list
              - check mark_list
              - index both (tokens and soundex(token)
              
-vtc: string
+res_addr_vtc_name: string
              - alternate_string_map
-subdistrict: string
+res_addr_subdistrict_name: string
              - alternate_string_map
-district: string
+res_addr_district_name: string
              - alternate_string_map
-state: string
-pincode: 6 digit number
-mobile: 10 digit number (check structure)
-email: string (check structure)
-             
- 
+res_addr_state_name: string
+res_addr_po_name: string
+              - alternate_string_map
+res_addr_pincode: 6 digit number
