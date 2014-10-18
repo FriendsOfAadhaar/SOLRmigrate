@@ -52,7 +52,7 @@
   <field name="id3" type="string" indexed="true" stored="false" required="false" multiValued="false" /> <!-- 999952458319 -->
   <field name="res_name" type="text_alphanum" indexed="true" stored="false" required="false" multiValued="false" /> <!-- Subhashini Ram -->
   <field name="res_dob_ddmmyyyy" type="tdate" indexed="true" stored="false" required="false" multiValued="false" /> <!-- 18-11-1962 -->
-  <field name="res_gender" type="string" indexed="true" stored="false" required="false" multiValued="false" /> <!--  F -->
+  <field name="res_gender" type="string" indexed="true" stored="false" required="false" multiValued="false" /> <!--  F/M/T -->
   <field name="res_mobile_num" type="tlong" indexed="true" stored="false" required="false" multiValued="false" /> <!-- NULL -->
   <field name="res_email_id" type="text_general" indexed="true" stored="false" required="false" multiValued="false" /> <!--  NULL -->
   <field name="res_lang_code" type="tint" indexed="true" stored="false" required="false" multiValued="false" /> <!-- 02 -->
@@ -73,6 +73,7 @@
 
   <!-- TODO - understand sort/facet requirements to enable docValues-->
   <!-- TODO - metaphone for name -->
+  <!-- TODO Store language specific data too-->
   
   <fieldType name="text_alphanum" class="solr.TextField" positionIncrementGap="100">
     <analyzer type="index">
