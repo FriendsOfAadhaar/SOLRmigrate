@@ -9,6 +9,11 @@
 /build
 */build
 
+#logs
+/logs
+*/logs
+*.log
+
 # IntelliJ specific files/directories
 out
 .idea
