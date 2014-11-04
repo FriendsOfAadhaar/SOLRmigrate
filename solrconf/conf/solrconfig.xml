@@ -1071,12 +1071,36 @@
          updateRequestProcessorChains that can be used by name
          on each Update Request
       -->
-    <!--
        <lst name="defaults">
-         <str name="update.chain">dedupe</str>
+         <str name="update.chain">aadhar-update-chain</str>
        </lst>
-       -->
   </requestHandler>
+
+  <updateRequestProcessorChain name="aadhar-update-chain">
+    <processor class="solr.LogUpdateProcessorFactory"/>
+    <processor class="solr.ParseDateFieldUpdateProcessorFactory">
+      <arr name="format">
+        <str>yyyy-MM-dd'T'HH:mm:ss.SSSZ</str>
+        <str>yyyy-MM-dd'T'HH:mm:ss,SSSZ</str>
+        <str>yyyy-MM-dd'T'HH:mm:ss.SSS</str>
+        <str>yyyy-MM-dd'T'HH:mm:ss,SSS</str>
+        <str>yyyy-MM-dd'T'HH:mm:ssZ</str>
+        <str>yyyy-MM-dd'T'HH:mm:ss</str>
+        <str>yyyy-MM-dd'T'HH:mmZ</str>
+        <str>yyyy-MM-dd'T'HH:mm</str>
+        <str>yyyy-MM-dd HH:mm:ss.SSSZ</str>
+        <str>yyyy-MM-dd HH:mm:ss,SSSZ</str>
+        <str>yyyy-MM-dd HH:mm:ss.SSS</str>
+        <str>yyyy-MM-dd HH:mm:ss,SSS</str>
+        <str>yyyy-MM-dd HH:mm:ssZ</str>
+        <str>yyyy-MM-dd HH:mm:ss</str>
+        <str>yyyy-MM-dd HH:mmZ</str>
+        <str>yyyy-MM-dd HH:mm</str>
+        <str>yyyy-MM-dd</str>
+      </arr>
+    </processor>
+    <processor class="solr.RunUpdateProcessorFactory"/>
+  </updateRequestProcessorChain>
 
   <!-- The following are implicitly added
   <requestHandler name="/update/json" class="solr.UpdateRequestHandler">
